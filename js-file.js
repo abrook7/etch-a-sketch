@@ -7,7 +7,14 @@ button.addEventListener("click", changeSize);
 
 function changeSize() {
   const size = prompt("What number of grid squares per side would you like?");
+  toRemove();
   return createGrid(size);
+}
+
+function toRemove() {
+  while (gridArea.firstChild) {
+    gridArea.removeChild(gridArea.firstChild);
+  }
 }
 
 function createGrid(size = 16) {
