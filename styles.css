@@ -14,3 +14,7 @@ body{
     height: 680px;
     width: 680px;
 }
+
+.dark {
+    background: black;
+}

@@ -1,5 +1,6 @@
 const gridArea = document.querySelector(".container");
 const button = document.querySelector("button");
+let sketch;
 
 createGrid();
 
@@ -30,9 +31,16 @@ function createGrid(size = 16) {
       gridArea.appendChild(row);
       for (j = 0; j < size; j++) {
         let box = document.createElement("div");
+        box.setAttribute("class", "box");
         box.setAttribute("style", `border: 1px solid black; flex: 1 1 auto`);
         row.appendChild(box);
       }
     }
   }
+  sketch = document.querySelectorAll(".box");
+  sketch.forEach((box) => {
+    box.addEventListener("mouseover", () => {
+      box.classList.add("dark");
+    });
+  });
 }
