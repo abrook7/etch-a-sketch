@@ -21,13 +21,18 @@ function createGrid(size = 16) {
   if (size > 100) {
     return "ERROR GRID TOO LARGE";
   } else {
-    for (i = 0; i < size ** 2; i++) {
-      let box = document.createElement("div");
-      box.setAttribute(
+    for (i = 0; i < size; i++) {
+      let row = document.createElement("div");
+      row.setAttribute(
         "style",
-        `border: 1px solid black; height:${38}px; width:${38}px;`
+        "display: flex; flex-direction: column; flex: 1 1 auto"
       );
-      gridArea.appendChild(box);
+      gridArea.appendChild(row);
+      for (j = 0; j < size; j++) {
+        let box = document.createElement("div");
+        box.setAttribute("style", `border: 1px solid black; flex: 1 1 auto`);
+        row.appendChild(box);
+      }
     }
   }
 }

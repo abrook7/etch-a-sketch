@@ -11,9 +11,6 @@ body{
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 608px;
-    width: 608px;
+    height: 680px;
+    width: 680px;
 }
