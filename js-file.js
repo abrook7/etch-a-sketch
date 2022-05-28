@@ -1,13 +1,18 @@
 const gridArea = document.querySelector(".container");
-const button = document.querySelector("button");
-let sketch;
+const button = document.querySelector(".grid");
+const reset = document.querySelector("#reset");
+let size;
 
 createGrid();
 
 button.addEventListener("click", changeSize);
+reset.addEventListener("click", () => {
+  toRemove();
+  createGrid(size);
+});
 
 function changeSize() {
-  const size = prompt("What number of grid squares per side would you like?");
+  size = prompt("What number of grid squares per side would you like?");
   toRemove();
   return createGrid(size);
 }
@@ -37,7 +42,7 @@ function createGrid(size = 16) {
       }
     }
   }
-  sketch = document.querySelectorAll(".box");
+  let sketch = document.querySelectorAll(".box");
   sketch.forEach((box) => {
     box.addEventListener("mouseover", () => {
       box.classList.add("dark");
